@@ -1,27 +1,31 @@
 const images = [
   {
-    url: "https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-    alt: "White and Black Long Fur Cat",
+    url: 'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    alt: 'White and Black Long Fur Cat',
   },
   {
-    url: "https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-    alt: "Orange and White Koi Fish Near Yellow Koi Fish",
+    url: 'https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    alt: 'Orange and White Koi Fish Near Yellow Koi Fish',
   },
   {
-    url: "https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-    alt: "Group of Horses Running",
+    url: 'https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    alt: 'Group of Horses Running',
   },
 ];
 
-const gallery = document.querySelector(".gallery");
+const gallery = document.querySelector('.gallery');
+const head = document.querySelector('head');
 
-const galeryMarcup = images.map(({ url, alt }) => 
-  `<li>
-    <img url = "${url}" alt = "${alt}" />
-  </li>`
-).join("");
+const galeryMarcup = images
+  .map(
+    ({ url, alt }) =>
+      `<li>
+        <img url = "${url}" alt = "${alt}" />
+      </li>`
+  )
+  .join('');
 
-//gallery.innerHTML = galeryMarcup;
-gallery.insertAdjacentHTML("beforeend", galeryMarcup);
+const linkStyles = `<link rel="stylesheet" href="../css/styles.css" />`;
 
-console.log(gallery);
+gallery.insertAdjacentHTML('beforeend', galeryMarcup);
+head.insertAdjacentHTML('beforeend', linkStyles);
