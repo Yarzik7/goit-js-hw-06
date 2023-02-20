@@ -1,16 +1,17 @@
-const input = document.querySelector('#validation-input');
-const validCountChar = Number(input.dataset.length);
+const inputEl = document.querySelector('#validation-input');
+const validCountChar = Number(input.dataset.length); // Отримує числове значення з data-атрибуту
 
 const blur = event => {
-  const countChar = event.currentTarget.value.length;
-  if (countChar === validCountChar) {
-    if (input.classList.value.includes('invalid')) input.classList.remove('invalid');
-    input.classList.add('valid');
-    return;
-  }
+  const countChar = event.currentTarget.value.length; // Отримує поточне число символів в полі введення
 
-  if (input.classList.value.includes('valid')) input.classList.remove('valid');
-  input.classList.add('invalid');
+  // Порівнює число введених символів з валідним числом
+  if (countChar === validCountChar) {
+    inputEl.classList.remove('invalid');
+    inputEl.classList.add('valid');
+  } else {
+    inputEl.classList.remove('valid');
+    inputEl.classList.add('invalid');
+  }
 };
 
-input.addEventListener('blur', blur);
+inputEl.addEventListener('blur', blur);

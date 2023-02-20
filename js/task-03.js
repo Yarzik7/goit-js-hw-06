@@ -13,19 +13,18 @@ const images = [
   },
 ];
 
-const gallery = document.querySelector('.gallery');
-const head = document.querySelector('head');
+const galleryEl = document.querySelector('.gallery');
 
 const galeryMarcup = images
   .map(
     ({ url, alt }) =>
       `<li>
-        <img url = "${url}" alt = "${alt}" />
+        <img src = "${url}" alt = "${alt}" width = "450" height = "250"/>
       </li>`
   )
-  .join('');
+  .join(''); // Додає в масив рядок з тегами li і об'єднує їх в одну строку
 
-const linkStyles = `<link rel="stylesheet" href="../css/styles.css" />`;
+const linkStyles = `<link rel="stylesheet" href="css/styles.css" />`; // Строка для підключення файлу стилів CSS
 
-gallery.insertAdjacentHTML('beforeend', galeryMarcup);
-head.insertAdjacentHTML('beforeend', linkStyles);
+galleryEl.insertAdjacentHTML('beforeend', galeryMarcup); // Додає створену розмітку в ul.gallery за одну операцію
+document.head.insertAdjacentHTML('beforeend', linkStyles); // Додає тег для підключення файлу CSS
