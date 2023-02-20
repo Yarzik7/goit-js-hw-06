@@ -15,7 +15,7 @@ const images = [
 
 const galleryEl = document.querySelector('.gallery');
 
-const galeryMarcup = images
+const galleryMarcup = images
   .map(
     ({ url, alt }) =>
       `<li>
@@ -26,5 +26,5 @@ const galeryMarcup = images
 
 const linkStyles = `<link rel="stylesheet" href="css/styles.css" />`; // Строка для підключення файлу стилів CSS
 
-galleryEl.insertAdjacentHTML('beforeend', galeryMarcup); // Додає створену розмітку в ul.gallery за одну операцію
+galleryEl.insertAdjacentHTML('beforeend', galleryMarcup); // Додає створену розмітку в ul.gallery за одну операцію
 document.head.insertAdjacentHTML('beforeend', linkStyles); // Додає тег для підключення файлу CSS
