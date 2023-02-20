@@ -1,5 +1,5 @@
 const inputEl = document.querySelector('#validation-input');
-const validCountChar = Number(input.dataset.length); // Отримує числове значення з data-атрибуту
+const validCountChar = Number(inputEl.dataset.length); // Отримує числове значення з data-атрибуту
 
 const blur = event => {
   const countChar = event.currentTarget.value.length; // Отримує поточне число символів в полі введення
