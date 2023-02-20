@@ -1,7 +1,7 @@
 const categoriesItemEl = document.querySelectorAll('.item'); // Отримуємо посилання на колекцію вузлів з селектором .item
 
 console.log(
-  'Numbers of categories: ',
+  'Number of categories: ',
   categoriesItemEl.length, // Виведення кількості категорій
   '\n\n'
 );
